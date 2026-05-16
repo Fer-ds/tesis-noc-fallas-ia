@@ -2,6 +2,13 @@
 
 Repositorio inicial para el trabajo de Seminario de Tesis 2.
 
+## Autor del proyecto
+
+**Fernando Joel Blaz Alemán**  
+Estudiante de la Maestría en Ciencia de Datos e Inteligencia Artificial  
+Curso: Seminario de Tesis 2  
+Repositorio académico: `tesis-noc-fallas-ia`
+
 ## Tema
 
 **Modelos de inteligencia artificial para la detección proactiva de fallas físicas en infraestructura de red de telecomunicaciones en entornos NOC.**
