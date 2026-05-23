@@ -4,7 +4,7 @@ Repositorio académico de **Seminario de Tesis 2**. El objetivo es construir un 
 
 ## 1. Contexto del proyecto
 
-La operación NOC de telecomunicaciones recibe incidentes y alarmas de diferentes dominios tecnológicos, principalmente transmisión e IP. El problema investigado es que muchos eventos críticos se gestionan de forma reactiva: primero se registra la caída o degradación, luego se escala y finalmente se atiende. Esta tesis busca avanzar hacia una detección más proactiva, usando patrones históricos de incidentes TX/IP y un nuevo snapshot de alarmas actuales.
+El NOC recibe incidentes y alarmas de diferentes dominios tecnológicos, principalmente transmisión e IP. El problema investigado es que muchos eventos críticos se gestionan de forma reactiva: primero se registra la caída o degradación, luego se escala y finalmente se atiende. Esta tesis busca avanzar hacia una detección más proactiva, usando patrones históricos de incidentes TX/IP y un nuevo snapshot de alarmas actuales.
 
 **Objetivo técnico del sprint 6:** mejorar la claridad del repositorio, integrar una segunda fuente de datos de alarmas actuales y comparar una línea base contra dos variantes A/B.
 
