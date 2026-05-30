@@ -5,13 +5,13 @@ El objetivo es construir un pipeline reproducible para preparar datos operativos
 
 ## Estado del repositorio
 
-Esta versión corresponde a la **corrección del Sprint 7**, realizada a partir de las observaciones del profesor:
+Esta versión corresponde a la **corrección del Sprint 7**, realizada a partir de las últimas observaciones:
 
-1. La data anterior no estaba suficientemente depurada ni diagnosticada.
-2. No bastaba con que una regla manual tenga mayor recall; se debe comparar con métricas completas.
+1. La data anterior no estaba lo suficientemente depurada ni diagnosticada.
+2. No basta con que una regla manual tenga mayor recall; se debe comparar con métricas completas.
 3. El repositorio debe estar ordenado por branch.
 4. Se debe justificar mejor el feature engineering.
-5. Se deben mostrar diagnósticos: ablation study, importancia de variables, curvas de aprendizaje/calibración y control de leakage.
+5. Se deben mostrar diagnósticos: ablation study, importancia de las variables, curvas de aprendizaje/calibración y control de leakage.
 
 ## 1. Fuentes de datos
 
@@ -79,7 +79,7 @@ Resumen de resultados promedio por fold:
 | Random Forest | 0.4014 | 0.7967 | 0.5313 | 0.4561 |
 
 **Lectura técnica:**  
-El baseline conserva recall alto, pero tiene baja precisión y menor F1. Random Forest mejora el equilibrio entre detectar casos Over OLA y reducir falsas alertas.
+El baseline conserva un recall alto, pero tiene baja precisión y menor F1. Random Forest mejora el equilibrio entre detectar casos Over OLA y reducir falsas alertas.
 
 ## 5. Diagnósticos agregados
 
