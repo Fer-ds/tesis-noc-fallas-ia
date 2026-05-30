@@ -1,0 +1,41 @@
+feature,importance,feature_group
+num__hour,0.11962166930442258,hour
+num__branch_over_ola_rate_train,0.10442064384646713,branch
+num__week_of_year,0.09291135974067327,week
+num__branch_incident_count_train,0.057870764102518416,branch
+num__month,0.05688854786465369,month
+num__day_of_week,0.04243459422825283,day
+num__quarter,0.030767373297513785,quarter
+cat__incident_type_CABLE BROKEN BACKBONE,0.027073969941286205,incident
+cat__incident_type_CABLE BROKEN ACCESS,0.026285733940199903,incident
+num__reason_over_ola_rate_train,0.025920790937927412,reason
+cat__reason_group_fiber_cable,0.025438456298480447,reason
+cat__priority_CRITICAL,0.024016702208684036,priority
+num__year,0.022590894299392827,year
+cat__priority_MAJOR,0.020954307698956447,priority
+cat__area_TXNOC,0.018612862048099144,area
+num__sla_threshold_hours,0.014895907971224724,sla
+num__is_night,0.014248619383627996,is
+cat__domain_IP,0.013652772305341213,domain
+cat__domain_TX,0.013602163449126407,domain
+cat__area_IPNOC,0.01320682695905647,area
+cat__network_id_network_005,0.012754859561840824,network
+cat__trouble_type_LINK DOWN,0.012364090601538834,trouble
+cat__reason_group_attenuation,0.011792580014115477,reason
+num__is_weekend,0.01141687486070387,is
+cat__type_of_incident_FIBRA,0.010018610152114952,type
+cat__branch_id_branch_038,0.008900849665657788,branch
+cat__type_of_incident_MICROWAVE,0.008863254608935538,type
+cat__incident_type_ATTENUATION OVER THRESHOLD,0.008842284671843153,incident
+cat__incident_type_IN SITE,0.00864807073839025,incident
+cat__network_id_network_006,0.008118611869423547,network
+cat__trouble_type_ATTENUATION,0.007258568727950801,trouble
+cat__network_id_network_004,0.006963406646401985,network
+cat__trouble_type_BAD PERFORMANCE,0.006616360463599308,trouble
+cat__branch_id_branch_026,0.006145369846565678,branch
+cat__network_id_network_002,0.005984013623561891,network
+cat__incident_type_ATTENUATION NEAR TO THRESHOLD,0.0054060117472045305,incident
+cat__branch_id_branch_027,0.0053396736196408435,branch
+cat__branch_id_branch_035,0.004956322339739528,branch
+cat__branch_id_branch_029,0.004505590995250117,branch
+cat__branch_id_branch_019,0.004504231521880917,branch

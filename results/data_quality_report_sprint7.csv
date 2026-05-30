@@ -1,0 +1,17 @@
+check,count,severity,note
+raw_rows_total,11036,info,Filas totales en hojas TX + IP antes de limpieza
+invalid_year_not_2024_2026,81,warning,Filas fuera del rango 2024-2026 se excluyen para consistencia temporal
+missing_kpi_label,217,warning,Filas sin etiqueta KPI válida se excluyen del modelamiento
+missing_DATE Start,10,warning,Nulos en campo DATE Start
+missing_Occur time,66,warning,Nulos en campo Occur time
+missing_Priority,64,warning,Nulos en campo Priority
+missing_Type of Incident,64,warning,Nulos en campo Type of Incident
+missing_Trouble Type,64,warning,Nulos en campo Trouble Type
+missing_Incident Type,64,warning,Nulos en campo Incident Type
+missing_Network,66,warning,Nulos en campo Network
+missing_Branch,65,warning,Nulos en campo Branch
+missing_End time,10,warning,Nulos en campo End time
+duration_kpi_mismatch,1629,warning,Casos donde duration_hours > sla_threshold_hours no coincide con KPI; se conserva KPI como etiqueta oficial
+model_rows_after_filter,10806,ok,Filas válidas 2024-2026 con KPI usada en Sprint 7
+target_over_ola_rows,3492,info,Cantidad de incidentes Over OLA
+target_on_time_rows,7314,info,Cantidad de incidentes On Time

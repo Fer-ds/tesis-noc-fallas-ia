@@ -1,0 +1,27 @@
+{
+  "main_change": "Se reemplaza evaluación de una sola corrida por validación temporal de 3 folds, análisis por branch, data quality, ablations, feature importance, learning curve y calibración.",
+  "best_model_by_f1_mean": {
+    "experimento": "Var2_RandomForest",
+    "modelo": "RandomForestClassifier",
+    "precision_mean": 0.4014,
+    "precision_std": 0.0386,
+    "recall_mean": 0.7967,
+    "recall_std": 0.0681,
+    "f1_mean": 0.5313,
+    "f1_std": 0.021,
+    "avg_precision_mean": 0.4561,
+    "brier_mean": 0.2469,
+    "latency_ms_per_1000_mean": 37.9641
+  },
+  "baseline_issue": "Baseline mantiene recall alto, pero menor precision/F1 y peor Brier; ML mejora equilibrio y confiabilidad.",
+  "recommended_variant": "Var2_RandomForest",
+  "evidence_files": [
+    "results/model_comparison_by_fold_sprint7.csv",
+    "results/model_comparison_summary_sprint7.csv",
+    "results/ablation_study_sprint7.csv",
+    "results/feature_importance_random_forest_sprint7.csv",
+    "results/calibration_bins_sprint7.csv",
+    "results/learning_curve_sprint7.csv",
+    "results/branch_metrics_sprint7.csv"
+  ]
+}

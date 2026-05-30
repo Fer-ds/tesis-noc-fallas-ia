@@ -1,0 +1,4 @@
+Sprint 7 correction executed.
+Inputs: incidentes 2024-2026 TX/IP Excel + NewCurrent AlarmBrowseResult Excel.
+Outputs: cleaned datasets, branch analysis, model diagnostics, ablation study, feature importance, PR curve, calibration curve, learning curve.
+Validation: temporal TimeSeriesSplit with 3 folds. Feature engineering by branch computed only with training set per fold.

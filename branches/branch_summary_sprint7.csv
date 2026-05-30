@@ -1,0 +1,45 @@
+branch,branch_id,n_incidents,over_ola,over_ola_rate,critical_count,tx_count,ip_count,top_reason
+PIU,branch_035,897,259,0.2887,515,276,621,fiber_cable
+SAN,branch_038,844,326,0.3863,570,478,366,fiber_cable
+LIMA 1,branch_026,748,295,0.3944,493,181,567,fiber_cable
+TELEFONICA,branch_041,690,202,0.2928,583,508,182,fiber_cable
+LIMA 4,branch_029,589,219,0.3718,304,80,509,fiber_cable
+HUN,branch_019,552,200,0.3623,369,199,353,fiber_cable
+LIMA 8,branch_032,374,138,0.369,242,152,222,fiber_cable
+CAJ,branch_011,365,98,0.2685,226,227,138,fiber_cable
+ARE,branch_004,354,130,0.3672,208,193,161,fiber_cable
+LIMA 2,branch_027,350,144,0.4114,223,43,307,fiber_cable
+MAD,branch_034,345,72,0.2087,205,13,332,fiber_cable
+ICA,branch_020,335,92,0.2746,213,138,197,fiber_cable
+HUA,branch_017,334,126,0.3772,199,132,202,fiber_cable
+CUS,branch_013,325,70,0.2154,198,113,212,fiber_cable
+AYA,branch_005,310,91,0.2935,176,143,167,fiber_cable
+AMA,branch_001,304,84,0.2763,204,166,138,fiber_cable
+ANC,branch_002,302,79,0.2616,181,101,201,fiber_cable
+LAM,branch_025,291,80,0.2749,168,119,172,fiber_cable
+JUN,branch_023,278,62,0.223,196,81,197,fiber_cable
+UCA,branch_042,250,54,0.216,169,23,227,fiber_cable
+LAL,branch_024,248,82,0.3306,140,105,143,fiber_cable
+LOR,branch_033,236,103,0.4364,109,100,136,fiber_cable
+PUN,branch_037,236,65,0.2754,125,78,158,fiber_cable
+APU,branch_003,208,69,0.3317,122,121,87,fiber_cable
+TAC,branch_040,195,79,0.4051,106,93,102,fiber_cable
+HUC,branch_018,184,68,0.3696,102,108,76,fiber_cable
+LIMA 3,branch_028,153,49,0.3203,94,59,94,fiber_cable
+LIMA 5,branch_030,107,33,0.3084,79,49,58,fiber_cable
+PRONATEL,branch_036,89,11,0.1236,38,0,89,fiber_cable
+LIMA 7,branch_031,58,26,0.4483,47,8,50,fiber_cable
+HO,branch_016,56,33,0.5893,23,47,9,fiber_cable
+CABLERA IMPECABLE,branch_008,53,18,0.3396,36,0,53,fiber_cable
+SATELITAL,branch_039,33,6,0.1818,25,2,31,fiber_cable
+CABLERA CHANCHAMAYO,branch_007,31,5,0.1613,26,0,31,fiber_cable
+UMBRELLA,branch_043,25,5,0.2,21,0,25,fiber_cable
+INTERNEXA,branch_022,19,8,0.4211,16,19,0,fiber_cable
+CABLE ESTACION,branch_006,11,2,0.1818,5,0,11,fiber_cable
+WINNER,branch_044,7,5,0.7143,5,0,7,fiber_cable
+ECONOCABLE,branch_014,7,1,0.1429,1,0,7,fiber_cable
+CABLERA MAGNIFICO,branch_009,4,0,0.0,4,0,4,fiber_cable
+GILAT,branch_015,3,2,0.6667,0,3,0,link_down
+CABLERA ZOHE,branch_010,3,1,0.3333,2,0,3,fiber_cable
+ICOTEC,branch_021,2,0,0.0,1,1,1,link_down
+CIRION,branch_012,1,0,0.0,1,1,0,fiber_cable

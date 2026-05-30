@@ -1,0 +1,4 @@
+experimento,modelo,precision_mean,precision_std,recall_mean,recall_std,f1_mean,f1_std,avg_precision_mean,brier_mean,latency_ms_per_1000_mean
+Baseline,Regla operacional,0.3203,0.0121,0.9594,0.0219,0.4802,0.0157,0.3589,0.4006,1.4996
+Var1_LogReg,LogisticRegression,0.3754,0.0181,0.8296,0.0436,0.5162,0.0093,0.4502,0.2446,31.0229
+Var2_RandomForest,RandomForestClassifier,0.4014,0.0386,0.7967,0.0681,0.5313,0.021,0.4561,0.2469,37.9641

@@ -1,0 +1,12 @@
+{
+  "incident_rows_raw_tx_ip": 11036,
+  "incident_rows_model_valid": 10806,
+  "alarms_rows_raw": 4030,
+  "alarms_rows_clean": 4030,
+  "incident_columns_published": 22,
+  "alarm_columns_published": 17,
+  "target_over_ola": 3492,
+  "target_on_time": 7314,
+  "branches": 44,
+  "privacy": "raw_excel_not_published; sensitive columns removed; branch summary is operational aggregate"
+}

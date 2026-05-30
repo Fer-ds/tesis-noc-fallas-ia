@@ -1,93 +1,149 @@
 # Modelos de IA para detección proactiva de fallas físicas en infraestructura de red NOC
 
-Repositorio académico de **Seminario de Tesis 2**. El objetivo es construir un pipeline reproducible para preparar datos operativos NOC, anonimizar información sensible y comparar modelos de inteligencia artificial orientados a detectar incidentes con riesgo de superar el OLA/SLA operativo.
+Repositorio académico de **Seminario de Tesis 2**.  
+El objetivo es construir un pipeline reproducible para preparar datos operativos NOC, anonimizar información sensible, analizar el comportamiento por **branch** y comparar modelos de inteligencia artificial orientados a priorizar incidentes con riesgo de superar el OLA/SLA operativo.
 
-## 1. Contexto del proyecto
+## Estado del repositorio
 
-El NOC recibe incidentes y alarmas de diferentes dominios tecnológicos, principalmente transmisión e IP. El problema investigado es que muchos eventos críticos se gestionan de forma reactiva: primero se registra la caída o degradación, luego se escala y finalmente se atiende. Esta tesis busca avanzar hacia una detección más proactiva, usando patrones históricos de incidentes TX/IP y un nuevo snapshot de alarmas actuales.
+Esta versión corresponde a la **corrección del Sprint 7**, realizada a partir de las observaciones del profesor:
 
-**Objetivo técnico del sprint 6:** mejorar la claridad del repositorio, integrar una segunda fuente de datos de alarmas actuales y comparar una línea base contra dos variantes A/B.
+1. La data anterior no estaba suficientemente depurada ni diagnosticada.
+2. No bastaba con que una regla manual tenga mayor recall; se debe comparar con métricas completas.
+3. El repositorio debe estar ordenado por branch.
+4. Se debe justificar mejor el feature engineering.
+5. Se deben mostrar diagnósticos: ablation study, importancia de variables, curvas de aprendizaje/calibración y control de leakage.
 
-## 2. Fuentes de datos usadas
+## 1. Fuentes de datos
 
-Los archivos Excel originales **no se suben al repositorio** por confidencialidad. En su lugar, se publican datasets procesados y anonimizados.
+Los Excel originales no se publican por confidencialidad operativa.
 
-| Fuente | Archivo procesado publicado | Uso en el sprint |
+| Fuente | Archivo procesado publicado | Uso |
 |---|---|---|
-| Incidentes históricos TX/IP | `data/processed/incidents_noc_tx_ip_anon_sprint6.csv` | Entrenamiento y validación de modelos |
-| Alarmas actuales | `data/processed/current_alarms_anon_sprint6.csv` | Nueva fuente para análisis y priorización preliminar |
-| Resumen técnico | `data/processed/dataset_summary_sprint6.json` | Evidencia de filas, privacidad y variable objetivo |
+| Incidentes históricos TX/IP | `data/processed/incidents_noc_tx_ip_clean_sprint7.csv` | Modelamiento supervisado |
+| Alarmas actuales | `data/processed/current_alarms_clean_sprint7.csv` | Priorización preliminar y análisis complementario |
+| Resumen por branch | `data/processed/branch_summary_sprint7.csv` | Análisis por branch |
+| Resumen técnico | `data/processed/dataset_summary_sprint7.json` | Evidencia de filas, privacidad y target |
 
-## 3. Variable objetivo y métrica central
+## 2. Variable objetivo
 
-La variable objetivo principal es:
+La variable objetivo es:
 
 ```text
-label_over_ola = 1 si duration_hours > sla_threshold_hours
-label_over_ola = 0 si duration_hours <= sla_threshold_hours
+label_over_ola = 1  -> incidente Over Time / fuera del OLA operativo
+label_over_ola = 0  -> incidente On Time / dentro del OLA operativo
 ```
 
-La métrica central elegida es **Recall Over OLA**, porque para una operación NOC es más importante detectar la mayor cantidad posible de incidentes que podrían incumplir el OLA, incluso si esto implica revisar algunos falsos positivos.
+En esta versión se usa el campo KPI operativo como etiqueta oficial.  
+También se valida la consistencia contra duración y umbral OLA, dejando evidencia en:
 
-## 4. Estructura del repositorio
+```text
+results/data_quality_report_sprint7.csv
+```
+
+## 3. Feature engineering
+
+Se incorporaron variables creadas sin usar información futura:
+
+| Grupo | Variables |
+|---|---|
+| Temporales | `year`, `quarter`, `month`, `week_of_year`, `day_of_week`, `hour`, `is_weekend`, `is_night` |
+| Operativas | `priority`, `type_of_incident`, `trouble_type`, `incident_type`, `network_id`, `reason_group` |
+| Branch | `branch_id`, `branch_over_ola_rate_train`, `branch_incident_count_train` |
+| Riesgo histórico | `reason_over_ola_rate_train` |
+| SLA/OLA | `sla_threshold_hours` |
+
+Las variables históricas por branch y por causa se calculan **solo con el training set** en cada fold. Esto evita leakage.
+
+## 4. Validación y comparación
+
+Se reemplaza la comparación simple por una validación temporal de 3 folds:
+
+```text
+Baseline vs Logistic Regression vs Random Forest
+```
+
+Archivos principales:
+
+```text
+results/model_comparison_by_fold_sprint7.csv
+results/model_comparison_summary_sprint7.csv
+results/ablation_study_sprint7.csv
+```
+
+Resumen de resultados promedio por fold:
+
+| Modelo | Precision media | Recall medio | F1 medio | Average Precision |
+|---|---:|---:|---:|---:|
+| Baseline regla operacional | 0.3203 | 0.9594 | 0.4802 | 0.3589 |
+| Logistic Regression | 0.3754 | 0.8296 | 0.5162 | 0.4502 |
+| Random Forest | 0.4014 | 0.7967 | 0.5313 | 0.4561 |
+
+**Lectura técnica:**  
+El baseline conserva recall alto, pero tiene baja precisión y menor F1. Random Forest mejora el equilibrio entre detectar casos Over OLA y reducir falsas alertas.
+
+## 5. Diagnósticos agregados
+
+| Diagnóstico | Archivo |
+|---|---|
+| Data quality | `results/data_quality_report_sprint7.csv` |
+| Ablation study | `results/ablation_study_sprint7.csv` |
+| Importancia de variables | `results/feature_importance_random_forest_sprint7.csv` |
+| Curva Precision-Recall | `results/fig_precision_recall_sprint7.png` |
+| Calibración | `results/fig_calibration_sprint7.png` |
+| Learning curve | `results/fig_learning_curve_sprint7.png` |
+| Métricas por branch | `results/branch_metrics_sprint7.csv` |
+| Tasa Over OLA por branch | `results/fig_branch_over_ola_rate_sprint7.png` |
+
+## 6. Análisis por branch
+
+La carpeta `branches/` contiene el resumen por branch y fichas para los branches con mayor volumen.
+
+```text
+branches/
+├── README.md
+├── branch_summary_sprint7.csv
+└── branch_*.md
+```
+
+Esto permite explicar que el análisis ya no se revisa solamente de manera global, sino también por sede/branch, como solicitó el profesor.
+
+## 7. Estructura del repositorio
 
 ```text
 .
 ├── data/
-│   ├── raw/                     # No subir excels originales; solo placeholder
-│   └── processed/               # Datasets anonimizados para GitHub
+│   ├── raw/                         # No subir Excel crudos
+│   └── processed/
 ├── docs/
-│   ├── data_dictionary_sprint6.md
-│   ├── sprint6_report.md
-│   └── privacy_and_anonymization.md
+│   ├── correcciones_observaciones_profesor_sprint7.md
+│   ├── data_quality_plan_sprint7.md
+│   ├── feature_engineering_sprint7.md
+│   └── sprint7_report.md
 ├── notebooks/
-│   └── 01_sprint6_ab_experiments.ipynb
+│   ├── 00_data_quality_branch_eda_sprint7.ipynb
+│   └── 01_model_diagnostics_sprint7.ipynb
 ├── results/
-│   ├── metrics_ab_sprint6.csv
-│   ├── pr_curve_sprint6.png
-│   └── current_alarms_top_risk_sample.csv
-├── logs/
-│   └── sprint6_run.log
+├── branches/
 ├── src/
-│   ├── prepare_datasets.py
-│   └── train_sprint6_ab.py
+│   ├── prepare_datasets_sprint7.py
+│   └── train_sprint7_diagnostics.py
+├── logs/
 ├── requirements.txt
 └── README.md
 ```
 
-## 5. Experimentos A/B Sprint 6
+## 8. Reproducibilidad
 
-| Variante | Cambio realizado | Propósito |
-|---|---|---|
-| Baseline | Regla operacional por prioridad, tipo de incidente, trouble type y SLA corto | Tener referencia simple y explicable |
-| Var1 | Logistic Regression con One-Hot Encoding, variables temporales, SLA y balanceo de clases | Modelo interpretable y rápido |
-| Var2 | Random Forest con branch anonimizado y umbral 0.40 | Priorizar recall para eventos Over OLA |
-
-Resultados reproducibles en `results/metrics_ab_sprint6.csv`.
-
-## 6. Resultado comparativo principal
-
-La variante con mejor Recall Over OLA en esta corrida fue **Baseline (Regla operacional)**, con:
-
-- Recall Over OLA: **1.0**
-- Precision Over OLA: **0.1922**
-- F1 Over OLA: **0.3224**
-- Average Precision: **0.185**
-
-El gráfico `results/pr_curve_sprint6.png` muestra la curva Precision-Recall de la variante seleccionada.
-
-## 7. Reproducibilidad
+Desde la raíz del repositorio:
 
 ```bash
-python -m venv .venv
-.venv\Scripts\activate  # Windows
 pip install -r requirements.txt
-python src/prepare_datasets.py
-python src/train_sprint6_ab.py
+python src/train_sprint7_diagnostics.py
 ```
 
-El split usado es temporal 80/20, con seed fijo 42. Esto evita mezclar eventos futuros dentro del entrenamiento y reduce el riesgo de leakage.
+El script usa los datasets ya procesados de `data/processed/` y genera los archivos de `results/`.
 
-## 8. Nota de privacidad
+## 9. Nota de privacidad
 
-Este repositorio no debe contener tickets reales, nombres de responsables, coordenadas, rutas, enlaces reales, códigos internos completos ni descripciones textuales operativas sensibles. Los archivos publicados son versiones procesadas y anonimizadas.
+Este repositorio no debe contener tickets reales, nombres de responsables, coordenadas, rutas, enlaces reales, códigos internos completos ni descripciones operativas sensibles.  
+Los archivos publicados son versiones procesadas y anonimizadas.
