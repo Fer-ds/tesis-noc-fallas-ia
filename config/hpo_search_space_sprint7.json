@@ -1,0 +1,58 @@
+{
+  "model_family": "GradientBoostingClassifier",
+  "n_estimators": {
+    "type": "int",
+    "low": 60,
+    "high": 180
+  },
+  "learning_rate": {
+    "type": "float_log",
+    "low": 0.015,
+    "high": 0.18
+  },
+  "max_depth": {
+    "type": "int",
+    "low": 1,
+    "high": 4
+  },
+  "min_samples_leaf": {
+    "type": "int",
+    "low": 8,
+    "high": 80
+  },
+  "subsample": {
+    "type": "float",
+    "low": 0.65,
+    "high": 1.0
+  },
+  "max_features": {
+    "type": "categorical",
+    "values": [
+      "sqrt",
+      "log2",
+      null
+    ]
+  },
+  "ccp_alpha": {
+    "type": "float_log",
+    "low": 1e-06,
+    "high": 0.005,
+    "description": "post-pruning de arboles base"
+  },
+  "tol": {
+    "type": "float_log",
+    "low": 0.0001,
+    "high": 0.01
+  },
+  "n_iter_no_change": {
+    "type": "int",
+    "low": 4,
+    "high": 12,
+    "description": "early stopping patience"
+  },
+  "decision_threshold": {
+    "type": "float",
+    "low": 0.18,
+    "high": 0.62
+  }
+}

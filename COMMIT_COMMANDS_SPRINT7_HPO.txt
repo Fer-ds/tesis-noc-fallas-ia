@@ -1,0 +1,17 @@
+# Comandos para actualizar GitHub Sprint 7 HPO
+# Ejecutar desde la raíz del repositorio local tesis-noc-fallas-ia
+
+# 1. Copiar el contenido de este paquete dentro del repo, respetando carpetas.
+#    NO copiar los Excel crudos originales al repositorio público.
+
+# 2. Revisar cambios
+git status
+
+# 3. Agregar solo artefactos procesados y documentación
+git add data/processed/incidents_noc_tx_ip_hpo_sprint7.csv         data/processed/current_alarms_clean_hpo_sprint7.csv         data/processed/dataset_summary_hpo_sprint7.json         config/hpo_search_space_sprint7.json         config/hpo_budget_sprint7.json         logs/hpo_runs_sprint7.csv         logs/hpo_events_sprint7.jsonl         logs/split_summary_sprint7.csv         results/hpo_topk_sprint7.csv         results/hpo_topk_sprint7.md         results/hpo_method_summary_sprint7.csv         results/fig_hpo_evolution_sprint7.png         results/fig_hpo_topk_sprint7.png         artifacts/best_config_sprint7_hpo.json         artifacts/best_hpo_model_sprint7.joblib         docs/sprint7_hpo_report.md         docs/guion_exposicion_hpo_sprint7.md         src/train_sprint7_hpo.py         notebooks/02_hpo_random_bayes_sprint7.ipynb         README_PATCH_SPRINT7_HPO.md         requirements.txt
+
+# 4. Commit
+git commit -m "Sprint 7: add HPO Random/Bayes with pruning and artifacts"
+
+# 5. Push
+git push origin main
