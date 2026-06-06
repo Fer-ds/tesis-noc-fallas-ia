@@ -1,0 +1,14 @@
+{
+  "source_rows_database_global": 12037,
+  "valid_rows_for_modeling": 10819,
+  "target_positive_over_ola": 3505,
+  "target_negative_on_time": 7314,
+  "target_positive_rate": 0.3239670949255939,
+  "date_min": "2022-08-14",
+  "date_max": "2026-04-24",
+  "branch_count_anonymized": 44,
+  "privacy_note": "No se incluyen TT, WO, coordenadas, link name, tracking incident ni identificadores completos.",
+  "current_alarms_rows_clean": 4030,
+  "current_alarms_date_min": "2015-12-19 01:40:10",
+  "current_alarms_date_max": "2026-05-05 02:00:01"
+}

@@ -1,0 +1,12 @@
+{
+  "random_trials": 12,
+  "bayesian_trials": 12,
+  "total_trials": 24,
+  "folds": 3,
+  "seed": 42,
+  "validation": "TimeSeriesSplit(n_splits=3)",
+  "objective": "maximizar F1 promedio de validacion para label_over_ola",
+  "pruning_rule": "desde el trial 5 de cada metodo, podar si F1 fold_1 < percentil 25 historico del metodo",
+  "early_stopping": "GradientBoostingClassifier(n_iter_no_change, validation_fraction, tol)",
+  "tree_pruning": "ccp_alpha en arboles base"
+}

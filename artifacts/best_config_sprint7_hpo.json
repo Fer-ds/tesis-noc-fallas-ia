@@ -1,0 +1,43 @@
+{
+  "selected_at": "2026-06-06T01:09:31",
+  "decision": "config_ganadora_por_mayor_F1_promedio_en_validacion_temporal",
+  "model_family": "GradientBoostingClassifier + OrdinalEncoder + SimpleImputer",
+  "method": "random_search",
+  "trial_id": 8,
+  "metrics_validation_cv": {
+    "f1_mean": 0.4985833561154505,
+    "f1_std": 0.0460569986752269,
+    "precision_mean": 0.3333333333333333,
+    "recall_mean": 1.0,
+    "average_precision_mean": 0.4395465553274738,
+    "balanced_accuracy_mean": 0.5
+  },
+  "params": {
+    "n_estimators": 60,
+    "learning_rate": 0.0782682880932311,
+    "max_depth": 2,
+    "min_samples_leaf": 59,
+    "subsample": 0.9232551608576888,
+    "max_features": "log2",
+    "ccp_alpha": 0.0001269862282811,
+    "tol": 0.0001903680214831,
+    "n_iter_no_change": 8,
+    "decision_threshold": 0.2303932323558283
+  },
+  "privacy": "No se incluyen TT, WO, coordenadas, link name, tracking incident ni identificadores completos.",
+  "data_summary": {
+    "source_rows_database_global": 12037,
+    "valid_rows_for_modeling": 10819,
+    "target_positive_over_ola": 3505,
+    "target_negative_on_time": 7314,
+    "target_positive_rate": 0.3239670949255939,
+    "date_min": "2022-08-14",
+    "date_max": "2026-04-24",
+    "branch_count_anonymized": 44,
+    "privacy_note": "No se incluyen TT, WO, coordenadas, link name, tracking incident ni identificadores completos.",
+    "current_alarms_rows_clean": 4030,
+    "current_alarms_date_min": "2015-12-19 01:40:10",
+    "current_alarms_date_max": "2026-05-05 02:00:01"
+  },
+  "note": "Artefacto entrenado sobre dataset anonimizado/procesado. No subir excels crudos al repositorio público."
+}
