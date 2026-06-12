@@ -1,0 +1,54 @@
+{
+  "project": "Modelos de IA para detección proactiva de fallas físicas en infraestructura de red NOC",
+  "sprint": "Sprint 8 - MLOps ligero, control de overfitting y demo 10-12 min",
+  "base_from": "Sprint 7 HPO",
+  "data": {
+    "source_rows_database_global": 12037,
+    "valid_rows_for_modeling": 10819,
+    "target_positive_over_ola": 3505,
+    "target_negative_on_time": 7314,
+    "target_positive_rate": 0.3239670949255939,
+    "date_min": "2022-08-14",
+    "date_max": "2026-04-24",
+    "branch_count_anonymized": 44,
+    "privacy_note": "No se incluyen TT, WO, coordenadas, link name, tracking incident ni identificadores completos.",
+    "current_alarms_rows_clean": 4030,
+    "current_alarms_date_min": "2015-12-19 01:40:10",
+    "current_alarms_date_max": "2026-05-05 02:00:01"
+  },
+  "validation": "TimeSeriesSplit(n_splits=3)",
+  "seed": 42,
+  "target": "label_over_ola",
+  "primary_metric": "F1 validación temporal",
+  "secondary_metrics": [
+    "precision",
+    "recall",
+    "average_precision",
+    "balanced_accuracy",
+    "brier"
+  ],
+  "model_winner_from_sprint7": "GradientBoostingClassifier + OrdinalEncoder + SimpleImputer",
+  "winner_method": "Random Search",
+  "winner_trial": 8,
+  "winner_params": {
+    "n_estimators": 60,
+    "learning_rate": 0.0782682880932311,
+    "max_depth": 2,
+    "min_samples_leaf": 59,
+    "subsample": 0.9232551608576888,
+    "max_features": "log2",
+    "ccp_alpha": 0.0001269862282811,
+    "tol": 0.0001903680214831,
+    "n_iter_no_change": 8,
+    "validation_fraction": 0.15,
+    "decision_threshold": 0.2303932323558283
+  },
+  "mlops_light_artifacts": {
+    "runs": "logs/mlops_runs_sprint8.csv",
+    "folds": "logs/overfitting_by_fold_sprint8.csv",
+    "dashboard": "results/experiment_dashboard_sprint8.csv",
+    "ablations": "results/ablation_summary_sprint8.csv",
+    "overfitting": "results/overfitting_gap_sprint8.csv",
+    "model_artifact": "artifacts/sprint8_demo_model.joblib"
+  }
+}

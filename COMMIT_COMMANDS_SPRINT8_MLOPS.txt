@@ -1,0 +1,15 @@
+# Comandos sugeridos para subir Sprint 8 MLOps Demo
+
+git checkout main
+git pull origin main
+git checkout -b sprint8-mlops-demo
+
+# Copiar carpetas del paquete al repo:
+# config/, docs/, logs/, results/, artifacts/, src/, notebooks/
+
+git add config docs logs results artifacts src notebooks README_PATCH_SPRINT8_MLOPS.md
+git commit -m "Add Sprint 8 MLOps demo, overfitting analysis and Q&A"
+git push origin sprint8-mlops-demo
+
+# En GitHub:
+# Compare & pull request -> Create pull request -> Merge pull request

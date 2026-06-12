@@ -1,0 +1,7 @@
+rank,exp_id,model,f1_train_mean,f1_val_mean,gap_train_val_f1,f1_val_std,brier_val_mean,notes
+1,S8_00_rf_baseline_all_features,RandomForestClassifier,0.741129062846208,0.6095547256655321,0.1315743371806759,0.06624589669525442,0.1898958927436819,Baseline de comparación para Sprint 8; no es la configuración ganadora de Sprint 7.
+2,S8_01_hpo_best_all_features,GradientBoostingClassifier,0.6190081405291683,0.5795741815199592,0.039433959009209096,0.04765161618380032,0.17098454005928984,"Ablación controlada: mismo split, seed, métrica y modelo; cambia solo set de features."
+3,S8_03_ablation_no_reason_group,GradientBoostingClassifier,0.6168124245832501,0.577993569720146,0.0388188548631041,0.04618521415391836,0.17034727888894707,"Ablación controlada: mismo split, seed, métrica y modelo; cambia solo set de features."
+4,S8_02_ablation_no_branch_id,GradientBoostingClassifier,0.6137194416884749,0.5779918739689526,0.035727567719522346,0.04540402101040094,0.1709993859434719,"Ablación controlada: mismo split, seed, métrica y modelo; cambia solo set de features."
+5,S8_05_operational_core_no_time,GradientBoostingClassifier,0.5335374899039272,0.4942595184404175,0.03927797146350975,0.012059994345947508,0.21198401210826914,"Ablación controlada: mismo split, seed, métrica y modelo; cambia solo set de features."
+6,S8_04_temporal_only,GradientBoostingClassifier,0.4875127270338621,0.4896211230245287,-0.0021083959906665894,0.010159322014939489,0.25047814314800954,"Ablación controlada: mismo split, seed, métrica y modelo; cambia solo set de features."
