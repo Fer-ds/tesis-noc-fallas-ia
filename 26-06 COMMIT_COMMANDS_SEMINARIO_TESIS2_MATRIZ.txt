@@ -1,0 +1,24 @@
+# Desde la raiz local del repositorio tesis-noc-fallas-ia
+
+git checkout main
+git pull origin main
+
+git checkout -b seminario-tesis2-matriz-sprint8
+
+# Copiar los archivos de este paquete dentro del repositorio respetando las carpetas.
+# Deben quedar en:
+# docs/seminario_tesis2/Entregable_Seminario_Tesis2_Blaz_Aleman_FINAL_con_matriz_consistencia.docx
+# docs/seminario_tesis2/Matriz_consistencia_Seminario_Tesis2_IA_Sprint8.docx
+# docs/seminario_tesis2/README.md
+# README_PATCH_SEMINARIO_TESIS2_MATRIZ.md
+# README_MAIN_SNIPPET_SEMINARIO_TESIS2.md (guia para actualizar el README principal)
+
+git add docs/seminario_tesis2 README_PATCH_SEMINARIO_TESIS2_MATRIZ.md README_MAIN_SNIPPET_SEMINARIO_TESIS2.md
+git commit -m "Add Seminario Tesis 2 deliverable and consistency matrix"
+git push origin seminario-tesis2-matriz-sprint8
+
+# En GitHub:
+# 1. Abrir la branch seminario-tesis2-matriz-sprint8.
+# 2. Verificar que aparezca docs/seminario_tesis2/README.md.
+# 3. Abrir Pull Request hacia main.
+# 4. Si todo se ve bien, mergear a main.
