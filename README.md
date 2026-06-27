@@ -1,44 +1,29 @@
-# Entregable Seminario de Tesis 2 - Sprint 8
+# Seminario de Tesis 2 - Entregable y matriz de consistencia
 
-Esta carpeta contiene el entregable académico actualizado del proyecto y la matriz de consistencia solicitada para Seminario de Tesis 2.
+Esta carpeta reúne el entregable actualizado del curso y la matriz de consistencia asociada al avance experimental desarrollado hasta el Sprint 8.
 
-## Archivos
+## Visualización rápida en GitHub
 
-| Archivo | Descripción |
-|---|---|
-| `Entregable_Seminario_Tesis2_Blaz_Aleman_FINAL_con_matriz_consistencia.docx` | Documento principal del entregable, con la matriz de consistencia anexada al final. |
-| `Matriz_consistencia_Seminario_Tesis2_IA_Sprint8.docx` | Matriz de consistencia en archivo independiente, para revisión rápida o entrega separada. |
+Para revisar el contenido directamente en el navegador, usar las versiones PDF o Markdown:
 
-## Relación con el avance del repositorio
+- [Ver entregable completo en PDF](Entregable_Seminario_Tesis2_Blaz_Aleman_FINAL_con_matriz_consistencia.pdf)
+- [Ver matriz de consistencia en PDF](Matriz_consistencia_Seminario_Tesis2_IA_Sprint8.pdf)
+- [Leer resumen del entregable en Markdown](ENTREGABLE_RESUMEN_PREVIEW.md)
+- [Leer matriz de consistencia en Markdown](MATRIZ_CONSISTENCIA_PREVIEW.md)
 
-El entregable se apoya en el avance experimental desarrollado hasta el Sprint 8:
+## Versiones editables
 
-- Sprint 6: preparación de datos, baseline inicial, diagnóstico y ordenamiento del repositorio.
-- Sprint 7: búsqueda de hiperparámetros con Random Search y búsqueda Bayesiana, validación temporal, logs y artefacto ganador.
-- Sprint 8: MLOps ligero, tablero de corridas, control de sobreajuste, ablaciones y reproducibilidad.
+Las versiones Word se mantienen como fuente editable del trabajo:
 
-La matriz de consistencia no es una línea de trabajo aparte. Resume y ordena metodológicamente lo que ya se está implementando en el pipeline:
+- [Entregable en Word](Entregable_Seminario_Tesis2_Blaz_Aleman_FINAL_con_matriz_consistencia.docx)
+- [Matriz de consistencia en Word](Matriz_consistencia_Seminario_Tesis2_IA_Sprint8.docx)
 
-- Problema y objetivo general del estudio.
-- Objetivos específicos vinculados al desempeño predictivo, ablaciones y control de sobreajuste.
-- Hipótesis, variables independientes, variable dependiente, variables de control e indicadores.
-- Evidencia del Sprint 8: `results/`, `logs/`, `artifacts/`, `config/`, `src/` y `notebooks/`.
-- Plan de generalización fuera de muestra o Plan B mediante validación temporal, backtesting, análisis por branch y shadow mode.
+## Relación con el avance del proyecto
 
-## Evidencia técnica relacionada
+El entregable documenta los avances desde Sprint 6 hasta Sprint 8. La matriz no es un documento aislado: resume la coherencia entre problema, objetivos, hipótesis, variables, indicadores, validación temporal y plan de generalización fuera de muestra.
 
-Los principales archivos de soporte del Sprint 8 se encuentran en:
+El Sprint 8 incorpora MLOps ligero, tablero de corridas, control de sobreajuste, ablaciones y reproducibilidad del pipeline de IA para detectar incidentes NOC TX/IP con riesgo de superar OLA.
 
-- `config/mlops_demo_sprint8_config.json`
-- `logs/mlops_runs_sprint8.csv`
-- `logs/overfitting_by_fold_sprint8.csv`
-- `results/experiment_dashboard_sprint8.csv`
-- `results/ablation_summary_sprint8.csv`
-- `results/overfitting_gap_sprint8.csv`
-- `artifacts/model_card_sprint8.md`
-- `notebooks/03_mlops_overfitting_demo_sprint8.ipynb`
-- `src/run_sprint8_mlops_demo.py`
+## Nota de uso
 
-## Nota de privacidad
-
-No se publican datos crudos, tickets reales, coordenadas, nombres de enlaces, tracking incidents completos ni identificadores sensibles. El entregable y la matriz usan resultados agregados, datos procesados/anonimizados y referencias a artefactos reproducibles del repositorio.
+GitHub muestra bien archivos Markdown (`.md`), notebooks (`.ipynb`) y PDF. Los documentos Word (`.docx`) se conservan para descarga o edición, pero no siempre se previsualizan de forma completa dentro del navegador.
