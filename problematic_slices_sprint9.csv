@@ -1,0 +1,7 @@
+slice,n,positives,positive_rate,f1_ci95,precision_ci95,recall_ci95,tp,fp,fn,tn,main_issue
+Global OOF,8112,2630,0.324211,"0.575 [0.562, 0.588]","0.434 [0.420, 0.448]","0.851 [0.839, 0.864]",2239,2921,391,2561,Referencia global
+incident_type=CABLE BROKEN ACCESS,4640,1313,0.282974,"0.430 [0.410, 0.450]","0.310 [0.292, 0.328]","0.703 [0.679, 0.727]",923,2053,390,1274,Sobre-alerta y falsos negativos relevantes
+network_type=AGG-SRT,1010,276,0.273267,"0.424 [0.383, 0.462]","0.294 [0.259, 0.327]","0.761 [0.711, 0.808]",210,504,66,230,Sobre-alerta por topología
+branch_id=BRANCH_034,258,58,0.224806,"0.398 [0.308, 0.478]","0.261 [0.192, 0.324]","0.845 [0.745, 0.936]",49,139,9,61,Sobre-alerta por branch operativo anonimizado
+reason_group=MISSING,269,67,0.249071,"0.429 [0.342, 0.507]","0.315 [0.239, 0.393]","0.672 [0.550, 0.780]",45,98,22,104,Señal causal faltante
+month=6,349,175,0.501433,"0.568 [0.497, 0.632]","0.709 [0.630, 0.792]","0.474 [0.400, 0.542]",83,34,92,140,Falsos negativos por posible shift temporal

@@ -1,0 +1,15 @@
+# Comandos sugeridos para subir Sprint 9 Error Slicing
+
+git checkout main
+git pull origin main
+git checkout -b sprint9-error-slicing
+
+# Copiar carpetas del paquete al repo:
+# docs/, results/, src/, notebooks/, README_PATCH_SPRINT9_ERROR_SLICING.md
+
+git add docs results src notebooks README_PATCH_SPRINT9_ERROR_SLICING.md COMMIT_COMMANDS_SPRINT9_ERROR_SLICING.txt
+git commit -m "Add Sprint 9 error slicing analysis and mitigation plan"
+git push origin sprint9-error-slicing
+
+# En GitHub:
+# Compare & pull request -> Create pull request -> Merge pull request
