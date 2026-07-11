@@ -1,0 +1,4 @@
+source,feature,leakage_type,reason,action,status
+Sprint 8 artifact / HPO dataset,duration_hours_evidence,target leakage,label_over_ola se determina comparando duración final con OLA/SLA; la duración no existe al inicio del incidente.,"Excluir de entrenamiento, inferencia y selección de umbral.",blocked
+Sprint 7 clean dataset,sla_threshold_hours,allowed operational input,El umbral de SLA/OLA se conoce al abrir el caso y no contiene el tiempo real de resolución.,Mantener como feature.,allowed
+Sprint 7 clean dataset,label_source,metadata leakage risk,Describe cómo se construyó la etiqueta; no es una señal disponible para decidir en producción.,Excluir del contrato de inferencia.,blocked

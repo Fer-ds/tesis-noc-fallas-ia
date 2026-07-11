@@ -1,0 +1,4 @@
+scenario_id,scenario_name,business_question,domain,area,priority,type_of_incident,trouble_type,incident_type,network_id,reason_group,branch_id,year,quarter,month,week_of_year,day_of_week,hour,is_weekend,is_night,sla_threshold_hours
+S01,Caso típico crítico,¿Qué caso debe priorizar el analista y por qué?,IP,IPNOC,CRITICAL,FIBRA,LINK DOWN,CABLE BROKEN ACCESS,network_005,fiber_cable,branch_001,2026,1,2,8,2,10,0,0,15
+S02,Caso nocturno de frontera,¿La recomendación es suficientemente clara para decidir revisión?,TX,TXNOC,MAJOR,MICROWAVE,BAD PERFORMANCE,IN SITE,network_006,link_down,branch_035,2026,1,3,11,5,2,1,1,15
+S03,Categoría nueva y motivo ausente,¿El sistema responde sin fallar y comunica la incertidumbre?,IP,IPNOC,MAJOR,FIBRA,ATTENUATION,ATTENUATION OVER THRESHOLD,network_004,,branch_unseen_999,2026,2,4,16,1,17,0,0,14

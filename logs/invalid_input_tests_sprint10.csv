@@ -1,0 +1,9 @@
+case,expected,observed,passed,latency_ms,internal_error,message
+valid_record,success,success,True,12.749115,0,
+missing_required_priority,validation_error,validation_error,True,0.476945,0,Faltan campos requeridos: priority
+invalid_numeric_type,validation_error,validation_error,True,3.433049,0,El campo numérico 'hour' contiene un valor inválido: 'veinticinco'
+out_of_range_hour,validation_error,validation_error,True,4.898523,0,"'hour' fuera de rango [0, 23]: 25"
+unknown_category,success,success,True,11.331262,0,
+extra_field,success,success,True,9.394291,0,
+null_category_as_missing,success,success,True,8.335077,0,
+empty_batch,validation_error,validation_error,True,0.010836,0,El lote no puede estar vacío.

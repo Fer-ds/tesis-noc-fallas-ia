@@ -1,0 +1,6 @@
+dimension,baseline,actual,status
+utility_1_5,pending,pending,not_collected
+clarity_1_5,pending,pending,not_collected
+confidence_1_5,pending,pending,not_collected
+task_success,pending,pending,not_collected
+task_time_seconds,pending,pending,not_collected

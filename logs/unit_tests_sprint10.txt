@@ -1,0 +1,13 @@
+test_core_evidence_exists (test_inference_contract_sprint10.EvidenceTests.test_core_evidence_exists) ... ok
+test_manifest_matches_contract (test_inference_contract_sprint10.EvidenceTests.test_manifest_matches_contract) ... ok
+test_empty_batch_is_rejected (test_inference_contract_sprint10.InferenceContractTests.test_empty_batch_is_rejected) ... ok
+test_feature_contract_has_no_duration (test_inference_contract_sprint10.InferenceContractTests.test_feature_contract_has_no_duration) ... ok
+test_missing_required_field_is_rejected (test_inference_contract_sprint10.InferenceContractTests.test_missing_required_field_is_rejected) ... ok
+test_out_of_range_hour_is_rejected (test_inference_contract_sprint10.InferenceContractTests.test_out_of_range_hour_is_rejected) ... ok
+test_unknown_category_is_supported (test_inference_contract_sprint10.InferenceContractTests.test_unknown_category_is_supported) ... ok
+test_valid_prediction (test_inference_contract_sprint10.InferenceContractTests.test_valid_prediction) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 2.785s
+
+OK

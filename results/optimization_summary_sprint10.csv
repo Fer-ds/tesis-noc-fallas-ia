@@ -1,0 +1,7 @@
+mode,batch_size,iterations,p50_batch_ms,p95_batch_ms,p99_batch_ms,mean_per_record_ms,throughput_req_s,observed_internal_errors,internal_error_ratio,throughput_speedup_vs_cold,slo_p95_lt_150ms,slo_error_lt_0_5pct,notes
+actual_cold_load_each_call,1,80,10.274559499999999,12.3148202,12.586288979999996,10.389994949999998,96.24643754037629,0,0.0,1.0,True,True,Antipatrón: deserializa el modelo en cada llamada.
+actual_warm,1,400,7.9172145,9.91850635,10.653390149999998,8.078563095,123.78438940693822,0,0.0,1.2861191808269214,True,True,Modelo precargado; ruta recomendada para request individual.
+actual_warm,8,220,7.135585,7.759491449999999,8.2964151,0.896734363068182,1115.1574437032768,0,0.0,11.586480208531954,True,True,Micro-batch vectorizado; mejora capacidad con mayor latencia de lote.
+actual_warm,16,160,6.852347,7.3496311,8.260808669999996,0.43431719374999994,2302.464683393622,0,0.0,23.92259643301308,True,True,Micro-batch vectorizado; mejora capacidad con mayor latencia de lote.
+actual_warm,32,120,6.9425495,7.583044549999999,8.03244748,0.21988679687499998,4547.79465712293,0,0.0,47.25156352114423,True,True,Micro-batch vectorizado; mejora capacidad con mayor latencia de lote.
+actual_warm,64,80,7.2774090000000005,7.90375695,7.9768281,0.11444559101562501,8737.776537529278,0,0.0,90.78545409915768,True,True,Micro-batch vectorizado; mejora capacidad con mayor latencia de lote.

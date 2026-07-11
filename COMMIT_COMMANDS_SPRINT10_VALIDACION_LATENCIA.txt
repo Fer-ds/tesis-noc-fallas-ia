@@ -1,0 +1,49 @@
+# SUBIDA A GITHUB — SPRINT 10
+# Ejecutar desde la raíz local del repositorio tesis-noc-fallas-ia.
+# El ZIP contiene un patch aditivo: sus carpetas deben copiarse SOBRE la raíz del repo.
+
+# 1) Partir de la rama de la última entrega
+git fetch origin
+git checkout seminario-tesis2-matriz-sprint8
+git pull --ff-only origin seminario-tesis2-matriz-sprint8
+
+# 2) Crear la rama de la nueva entrega
+git checkout -b seminario-tesis2-validacion-latencia-sprint10
+
+# 3A) Linux/macOS — descomprimir y superponer
+rm -rf /tmp/sprint10_patch
+mkdir -p /tmp/sprint10_patch
+unzip -o ~/Downloads/github_patch_sprint10_validacion_latencia.zip -d /tmp/sprint10_patch
+cp -a /tmp/sprint10_patch/. .
+
+# 3B) Windows PowerShell — usar estas líneas EN LUGAR de 3A
+# $src = "$HOME\Downloads\github_patch_sprint10_validacion_latencia.zip"
+# $dst = "$env:TEMP\sprint10_patch"
+# Remove-Item $dst -Recurse -Force -ErrorAction SilentlyContinue
+# Expand-Archive -Path $src -DestinationPath $dst -Force
+# Get-ChildItem $dst -Force | Copy-Item -Destination . -Recurse -Force
+
+# 4) Reproducir y validar
+python -m pip install -r requirements-sprint10.txt
+python src/run_sprint10_validation_latency.py
+python -m unittest discover -s tests -v
+python src/run_stakeholder_scenarios_sprint10.py
+
+# 5) Revisar y publicar
+git status
+git add README.md \
+        README_PATCH_SPRINT9_ERROR_SLICING.md \
+        README_PATCH_SPRINT10_VALIDACION_LATENCIA.md \
+        MANIFEST_SPRINT10_VALIDACION_LATENCIA.md \
+        COMMIT_COMMANDS_SPRINT10_VALIDACION_LATENCIA.txt \
+        requirements-sprint10.txt \
+        artifacts config data docs logs notebooks results src templates tests
+
+git commit -m "Sprint 10: baseline vs actual, latencia, robustez y validación stakeholder"
+git push -u origin seminario-tesis2-validacion-latencia-sprint10
+
+# 6) Verificación final
+git log -1 --oneline
+git status
+
+# Nota: el documento de preguntas/respuestas del profesor NO forma parte de este patch.

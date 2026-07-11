@@ -1,0 +1,29 @@
+{
+  "timestamp_lima": "2026-07-10T18:04:01.500554-05:00",
+  "platform": "Linux-4.4.0-x86_64-with-glibc2.41",
+  "machine": "x86_64",
+  "cpu_model": "unknown",
+  "logical_cpu_count": 56,
+  "memory_mb_visible": 4096.0,
+  "python": "3.13.5 (main, May  5 2026, 21:05:52) [GCC 14.2.0]",
+  "numpy": "2.3.5",
+  "pandas": "2.2.3",
+  "scikit_learn": "1.8.0",
+  "joblib": "1.5.3",
+  "seed": 42,
+  "data_path": "data/processed/incidents_noc_tx_ip_clean_sprint7.csv",
+  "data_sha256": "3323649cd76c89d1c20ee65ac9e04400eaae8b9dd11a99efb5105669bd527024",
+  "hpo_data_sha256": "ec8512667fc7c337bde407821135b44b1308286fefbaf213bef7d4ef34585ff0",
+  "artifact_sha256": "bdda52ba4d3c3b891dcafd150c5df0d1bb2c048c5681c50bd08b9834375dad2f",
+  "actual_model": "sprint10-logreg-leakage-safe-v1",
+  "actual_threshold": 0.24499999999999988,
+  "forbidden_features": [
+    "date_end",
+    "duration_hours",
+    "duration_hours_evidence",
+    "end_time",
+    "label_source",
+    "resolution_time",
+    "time_to_resolution"
+  ]
+}
