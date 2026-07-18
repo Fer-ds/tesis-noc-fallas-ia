@@ -1,0 +1,27 @@
+{
+  "release": "sprint11-deployment-plan-v1",
+  "seed": 42,
+  "model_enabled": true,
+  "model_path": "artifacts/actual_logreg_sprint10.joblib",
+  "decision_mode": "shadow_ranking",
+  "decision_threshold": 0.20,
+  "threshold_status": "recall-first candidate; revalidate on a new temporal window",
+  "fallback_baseline": "BAU_rule_frozen_vS7",
+  "max_batch_size": 64,
+  "max_payload_bytes": 65536,
+  "request_timeout_ms": 150,
+  "log_level": "INFO",
+  "log_path": "logs/inference_sprint11.jsonl",
+  "metrics_path": "logs/inference_metrics_sprint11.csv",
+  "positive_class": "INCUMPLE_OLA",
+  "prediction_positive": "CANDIDATO_ALERTA",
+  "forbidden_features": [
+    "duration_hours",
+    "duration_hours_evidence",
+    "resolution_time",
+    "time_to_resolution",
+    "end_time",
+    "date_end",
+    "label_source"
+  ]
+}

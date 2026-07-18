@@ -1,0 +1,38 @@
+{
+  "release": "sprint11-deployment-plan-v1",
+  "generated_at_utc": "2026-07-17T23:56:00Z",
+  "python": "3.13.5",
+  "platform": "Linux-4.4.0-x86_64-with-glibc2.41",
+  "seed": 42,
+  "dependencies": {
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "scikit-learn": "1.8.0",
+    "joblib": "1.5.3",
+    "pydantic": "2.13.4",
+    "matplotlib": "3.10.8"
+  },
+  "model_path": "artifacts/actual_logreg_sprint10.joblib",
+  "model_version": "sprint10-logreg-leakage-safe-v1",
+  "model_sha256": "bdda52ba4d3c3b891dcafd150c5df0d1bb2c048c5681c50bd08b9834375dad2f",
+  "data_path": "data/processed/incidents_noc_tx_ip_clean_sprint7.csv",
+  "data_sha256": "3323649cd76c89d1c20ee65ac9e04400eaae8b9dd11a99efb5105669bd527024",
+  "holdout_predictions_sha256": "6692e4d239f7aed4e0dd7a6b1fb43de1f0a7da10fa4b2934a4b38bc3b2e07e86",
+  "contract_request_sha256": "427b38b40e9137a261c743c4c7edb4d7c4cedb7b438837d0c0deee93f981fb7c",
+  "contract_response_sha256": "180f85879e03ae585d1fec7ed07276b04ae8a4eb3f1ad0c2982c6bbcf17e6617",
+  "config_sha256": "566269006a39b47a6406090079e18357bb147a61efed95f225edb349673cf923",
+  "decision_mode_default": "shadow_ranking",
+  "decision_threshold_candidate": 0.2,
+  "threshold_status": "post-feedback recall-first candidate; requires new temporal validation",
+  "fallback": "BAU_rule_frozen_vS7",
+  "positive_class": "INCUMPLE_OLA",
+  "forbidden_features": [
+    "duration_hours",
+    "duration_hours_evidence",
+    "resolution_time",
+    "time_to_resolution",
+    "end_time",
+    "date_end",
+    "label_source"
+  ]
+}

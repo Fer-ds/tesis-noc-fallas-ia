@@ -1,0 +1,14 @@
+test_original_threshold_counts (test_confusion_matrix_sprint11.ConfusionMatrixEvidenceTests.test_original_threshold_counts) ... ok
+test_positive_is_actual_ola_breach (test_confusion_matrix_sprint11.ConfusionMatrixEvidenceTests.test_positive_is_actual_ola_breach) ... ok
+test_recall_first_candidate_counts (test_confusion_matrix_sprint11.ConfusionMatrixEvidenceTests.test_recall_first_candidate_counts) ... ok
+test_boundary_and_unknown_categories_are_supported (test_contract_smoke_sprint11.ContractSmokeTests.test_boundary_and_unknown_categories_are_supported) ... ok
+test_invalid_hour_is_rejected (test_contract_smoke_sprint11.ContractSmokeTests.test_invalid_hour_is_rejected) ... ok
+test_safe_mode_is_default (test_contract_smoke_sprint11.ContractSmokeTests.test_safe_mode_is_default) ... ok
+test_schema_blocks_leakage_features (test_contract_smoke_sprint11.ContractSmokeTests.test_schema_blocks_leakage_features) ... ok
+test_smoke_valid_input_returns_valid_output (test_contract_smoke_sprint11.ContractSmokeTests.test_smoke_valid_input_returns_valid_output) ... ok
+test_golden_scores_are_stable (test_golden_sprint11.GoldenPredictionTests.test_golden_scores_are_stable) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.128s
+
+OK

@@ -1,0 +1,48 @@
+{
+  "request_id": "req-e2e-sprint11-001",
+  "decision_mode": "shadow_ranking",
+  "threshold": 0.20,
+  "records": [
+    {
+      "domain": "IP",
+      "area": "IPNOC",
+      "priority": "CRITICAL",
+      "type_of_incident": "FIBRA",
+      "trouble_type": "ATTENUATION",
+      "incident_type": "CABLE BROKEN ACCESS",
+      "network_id": "network_005",
+      "reason_group": "attenuation",
+      "branch_id": "branch_001",
+      "year": 2026,
+      "quarter": 3,
+      "month": 7,
+      "week_of_year": 29,
+      "day_of_week": 4,
+      "hour": 11,
+      "is_weekend": 0,
+      "is_night": 0,
+      "sla_threshold_hours": 15.0
+    },
+    {
+      "domain": "TX",
+      "area": "TRANSPORT",
+      "priority": "MAJOR",
+      "type_of_incident": "ENERGIA",
+      "trouble_type": "POWER",
+      "incident_type": "SITE DOWN",
+      "network_id": "network_new_demo",
+      "reason_group": null,
+      "branch_id": "branch_new_demo",
+      "year": 2026,
+      "quarter": 3,
+      "month": 7,
+      "week_of_year": 29,
+      "day_of_week": 5,
+      "hour": 2,
+      "is_weekend": 1,
+      "is_night": 1,
+      "sla_threshold_hours": 4.0,
+      "campo_extra_ignorado": "compatibilidad hacia delante"
+    }
+  ]
+}

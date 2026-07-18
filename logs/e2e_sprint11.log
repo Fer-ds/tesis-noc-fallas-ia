@@ -1,0 +1,30 @@
+{
+  "timestamp_utc": "2026-07-18T00:25:31.958568+00:00",
+  "started_at_utc": "2026-07-18T00:25:28.993269+00:00",
+  "success": true,
+  "command": [
+    "/opt/pyvenv/bin/python",
+    "/mnt/data/work_final_tesis/repo_combined_sprint11/src/predict_cli_sprint11.py",
+    "--input",
+    "/mnt/data/work_final_tesis/repo_combined_sprint11/examples/input_valid_sprint11.json",
+    "--output",
+    "/mnt/data/work_final_tesis/repo_combined_sprint11/results/e2e_output_sprint11.json",
+    "--pretty"
+  ],
+  "checks": {
+    "cli_exit_zero": true,
+    "output_exists": true,
+    "output_contract_valid": true,
+    "batch_size_expected": true,
+    "model_hash_matches_manifest": true,
+    "scores_in_range": true,
+    "safe_mode_default": true,
+    "positive_class_explicit": true,
+    "golden_scores_within_tolerance": true,
+    "golden_labels_match": true
+  },
+  "errors": [],
+  "input_sha256": "38ee4413d64a322fd5527a31b62337764607ee85af5628944467aad0917c68d8",
+  "output_sha256": "31891fdfaaef3043922779224620cd96091a43944de84bfba946ac31f66bab91",
+  "criterion": "Exit code 0; salida valida; 2 predicciones; scores 0..1; hash de modelo correcto; modo shadow_ranking; proyección estable igual al golden dentro de tolerancia."
+}

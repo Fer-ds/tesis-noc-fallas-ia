@@ -1,0 +1,8 @@
+timestamp_utc,request_id,status,decision_mode,batch_size,total_latency_ms,mean_latency_ms,model_version,threshold,error_code
+2026-07-17T23:52:22.935738+00:00,req-e2e-sprint11-001,ok,shadow_ranking,2,2070.14371,1035.071855,sprint10-logreg-leakage-safe-v1,0.2,
+2026-07-17T23:52:40.431387+00:00,req-e2e-sprint11-001,ok,shadow_ranking,2,1598.511531,799.255766,sprint10-logreg-leakage-safe-v1,0.2,
+2026-07-17T23:53:42.538008+00:00,req-e2e-sprint11-001,ok,shadow_ranking,2,2111.727026,1055.863513,sprint10-logreg-leakage-safe-v1,0.2,
+2026-07-17T23:55:11.466668+00:00,req-e2e-sprint11-001,ok,shadow_ranking,2,1798.405456,899.202728,sprint10-logreg-leakage-safe-v1,0.2,
+2026-07-17T23:56:09.835691+00:00,req-e2e-sprint11-001,ok,shadow_ranking,2,1681.402251,840.701125,sprint10-logreg-leakage-safe-v1,0.2,
+2026-07-17T23:56:46.187719+00:00,req-invalid-sprint11-001,error,shadow_ranking,0,,,,0.2,INPUT_VALIDATION_ERROR
+2026-07-18T00:25:30.136870+00:00,req-e2e-sprint11-001,ok,shadow_ranking,2,1593.735333,796.867667,sprint10-logreg-leakage-safe-v1,0.2,

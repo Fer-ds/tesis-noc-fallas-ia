@@ -1,0 +1,37 @@
+{
+  "request_id": "req-e2e-sprint11-001",
+  "status": "ok",
+  "positive_class_definition": "INCUMPLE_OLA",
+  "prediction_positive_definition": "CANDIDATO_ALERTA",
+  "decision_mode": "shadow_ranking",
+  "model_version": "sprint10-logreg-leakage-safe-v1",
+  "model_sha256": "bdda52ba4d3c3b891dcafd150c5df0d1bb2c048c5681c50bd08b9834375dad2f",
+  "batch_size": 2,
+  "model_load_ms": 1584.059811,
+  "inference_total_ms": 9.634411,
+  "total_latency_ms": 1593.735333,
+  "cold_start_included": true,
+  "slo_p95_target_ms": 150.0,
+  "slo_applies_to": "warm_inference",
+  "predictions": [
+    {
+      "record_index": 0,
+      "risk_score": 0.590025847448089,
+      "predicted_positive": true,
+      "decision": "PRIORIZAR_PARA_REVISION",
+      "ranking_band": "ALTA",
+      "threshold": 0.2,
+      "latency_ms": 4.798457
+    },
+    {
+      "record_index": 1,
+      "risk_score": 0.6175538030337541,
+      "predicted_positive": true,
+      "decision": "PRIORIZAR_PARA_REVISION",
+      "ranking_band": "ALTA",
+      "threshold": 0.2,
+      "latency_ms": 4.798457
+    }
+  ],
+  "generated_at_utc": "2026-07-18T00:25:31.731401Z"
+}

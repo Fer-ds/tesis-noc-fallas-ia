@@ -1,0 +1,25 @@
+{
+  "request_id": "req-invalid-sprint11-001",
+  "records": [
+    {
+      "domain": "IP",
+      "area": "IPNOC",
+      "priority": "CRITICAL",
+      "type_of_incident": "FIBRA",
+      "trouble_type": "ATTENUATION",
+      "incident_type": "CABLE BROKEN ACCESS",
+      "network_id": "network_005",
+      "reason_group": "attenuation",
+      "branch_id": "branch_001",
+      "year": 2026,
+      "quarter": 3,
+      "month": 7,
+      "week_of_year": 29,
+      "day_of_week": 4,
+      "hour": 25,
+      "is_weekend": 0,
+      "is_night": 0,
+      "sla_threshold_hours": 15.0
+    }
+  ]
+}

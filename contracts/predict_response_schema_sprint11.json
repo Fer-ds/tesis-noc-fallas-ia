@@ -1,0 +1,167 @@
+{
+  "$defs": {
+    "PredictionItem": {
+      "properties": {
+        "record_index": {
+          "minimum": 0,
+          "title": "Record Index",
+          "type": "integer"
+        },
+        "risk_score": {
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "title": "Risk Score",
+          "type": "number"
+        },
+        "predicted_positive": {
+          "title": "Predicted Positive",
+          "type": "boolean"
+        },
+        "decision": {
+          "title": "Decision",
+          "type": "string"
+        },
+        "ranking_band": {
+          "enum": [
+            "ALTA",
+            "MEDIA",
+            "BAJA",
+            "NO_APLICA"
+          ],
+          "title": "Ranking Band",
+          "type": "string"
+        },
+        "threshold": {
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "title": "Threshold",
+          "type": "number"
+        },
+        "latency_ms": {
+          "minimum": 0.0,
+          "title": "Latency Ms",
+          "type": "number"
+        }
+      },
+      "required": [
+        "record_index",
+        "risk_score",
+        "predicted_positive",
+        "decision",
+        "ranking_band",
+        "threshold",
+        "latency_ms"
+      ],
+      "title": "PredictionItem",
+      "type": "object"
+    }
+  },
+  "properties": {
+    "request_id": {
+      "title": "Request Id",
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "ok",
+        "model_disabled"
+      ],
+      "title": "Status",
+      "type": "string"
+    },
+    "positive_class_definition": {
+      "const": "INCUMPLE_OLA",
+      "default": "INCUMPLE_OLA",
+      "title": "Positive Class Definition",
+      "type": "string"
+    },
+    "prediction_positive_definition": {
+      "const": "CANDIDATO_ALERTA",
+      "default": "CANDIDATO_ALERTA",
+      "title": "Prediction Positive Definition",
+      "type": "string"
+    },
+    "decision_mode": {
+      "enum": [
+        "shadow_ranking",
+        "alert_candidate",
+        "baseline_only"
+      ],
+      "title": "Decision Mode",
+      "type": "string"
+    },
+    "model_version": {
+      "title": "Model Version",
+      "type": "string"
+    },
+    "model_sha256": {
+      "title": "Model Sha256",
+      "type": "string"
+    },
+    "batch_size": {
+      "maximum": 64,
+      "minimum": 0,
+      "title": "Batch Size",
+      "type": "integer"
+    },
+    "model_load_ms": {
+      "minimum": 0.0,
+      "title": "Model Load Ms",
+      "type": "number"
+    },
+    "inference_total_ms": {
+      "minimum": 0.0,
+      "title": "Inference Total Ms",
+      "type": "number"
+    },
+    "total_latency_ms": {
+      "minimum": 0.0,
+      "title": "Total Latency Ms",
+      "type": "number"
+    },
+    "cold_start_included": {
+      "default": true,
+      "title": "Cold Start Included",
+      "type": "boolean"
+    },
+    "slo_p95_target_ms": {
+      "exclusiveMinimum": 0.0,
+      "title": "Slo P95 Target Ms",
+      "type": "number"
+    },
+    "slo_applies_to": {
+      "const": "warm_inference",
+      "default": "warm_inference",
+      "title": "Slo Applies To",
+      "type": "string"
+    },
+    "predictions": {
+      "items": {
+        "$ref": "#/$defs/PredictionItem"
+      },
+      "title": "Predictions",
+      "type": "array"
+    },
+    "generated_at_utc": {
+      "format": "date-time",
+      "title": "Generated At Utc",
+      "type": "string"
+    }
+  },
+  "required": [
+    "request_id",
+    "status",
+    "decision_mode",
+    "model_version",
+    "model_sha256",
+    "batch_size",
+    "model_load_ms",
+    "inference_total_ms",
+    "total_latency_ms",
+    "slo_p95_target_ms",
+    "predictions",
+    "generated_at_utc"
+  ],
+  "title": "PredictResponse",
+  "type": "object"
+}

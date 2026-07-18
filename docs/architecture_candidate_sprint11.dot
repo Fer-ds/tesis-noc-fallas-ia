@@ -1,0 +1,32 @@
+digraph Sprint11 {
+  graph [rankdir=TB, bgcolor="white", pad="0.25", nodesep="0.45", ranksep="0.55", splines=ortho,
+         labelloc="t", label="Arquitectura candidata del prototipo", fontsize=24, fontname="Arial"];
+  node [shape=box, style="rounded,filled", fillcolor="#F7F9FC", color="#355070", penwidth=1.5,
+        fontname="Arial", fontsize=16, margin="0.18,0.12"];
+  edge [color="#355070", penwidth=1.4, arrowsize=0.8, fontname="Arial", fontsize=13];
+
+  input [label="Entrada batch\nJSON anonimizado\n1-64 incidentes"];
+  contract [label="Contrato I/O\nPydantic + JSON Schema\ntipos, nulos, rangos y límites"];
+  cli [label="Orquestador CLI\npredict_cli_sprint11.py\nrequest_id + modo seguro"];
+  pipeline [label="Pipeline leakage-safe\npreprocesamiento +\nregresión logística"];
+  policy [label="Política de decisión\nshadow_ranking\numbral candidato 0.20"];
+  output [label="Salida JSON\nscore + candidato de alerta\nlatencia + versión/hash"];
+  observe [label="Observabilidad\nSTDOUT JSONL + CSV\np50/p95, errores y volumen", fillcolor="#EEF7EE"];
+
+  input -> contract -> cli -> pipeline -> policy -> output -> observe;
+
+  config [label="Configuración reproducible\n.env + config JSON\nuv.lock + hashes", fillcolor="#FFF8E8"];
+  fallback [label="Fallback / rollback\nregla BAU congelada\nno suprimir alertas", fillcolor="#FFF3E6"];
+  config -> cli;
+  policy -> fallback [style=dashed];
+
+  subgraph cluster_roadmap {
+    label="Hoja de ruta (no forma parte del prototipo actual)";
+    color="#9AA7B5"; style="rounded,dashed"; penwidth=1.3; fontsize=16; fontname="Arial";
+    docker [label="Docker\nusuario no-root\nhealthcheck", fillcolor="#F8F8F8"];
+    api [label="FastAPI\n/predict  /healthz\nOpenAPI", fillcolor="#F8F8F8"];
+    load [label="Prueba concurrente\n10 -> 100 req/s\np50/p95/error", fillcolor="#F8F8F8"];
+    docker -> api -> load;
+  }
+  output -> docker [style=dashed];
+}
