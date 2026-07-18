@@ -1,0 +1,14 @@
+{
+  "source_input": "examples/input_valid_sprint11.json",
+  "model_version": "sprint10-logreg-leakage-safe-v1",
+  "threshold": 0.2,
+  "absolute_tolerance": 1e-10,
+  "risk_scores": [
+    0.590025847448089,
+    0.6175538030337541
+  ],
+  "predicted_positive": [
+    true,
+    true
+  ]
+}

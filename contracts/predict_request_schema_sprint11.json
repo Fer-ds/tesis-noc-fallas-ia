@@ -1,0 +1,239 @@
+{
+  "$defs": {
+    "IncidentRecord": {
+      "description": "Registro disponible al momento de apertura del incidente.",
+      "properties": {
+        "domain": {
+          "anyOf": [
+            {
+              "maxLength": 80,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Domain"
+        },
+        "area": {
+          "anyOf": [
+            {
+              "maxLength": 80,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Area"
+        },
+        "priority": {
+          "anyOf": [
+            {
+              "maxLength": 80,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Priority"
+        },
+        "type_of_incident": {
+          "anyOf": [
+            {
+              "maxLength": 120,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Type Of Incident"
+        },
+        "trouble_type": {
+          "anyOf": [
+            {
+              "maxLength": 120,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Trouble Type"
+        },
+        "incident_type": {
+          "anyOf": [
+            {
+              "maxLength": 160,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Incident Type"
+        },
+        "network_id": {
+          "anyOf": [
+            {
+              "maxLength": 120,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Network Id"
+        },
+        "reason_group": {
+          "anyOf": [
+            {
+              "maxLength": 120,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Reason Group"
+        },
+        "branch_id": {
+          "anyOf": [
+            {
+              "maxLength": 120,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Branch Id"
+        },
+        "year": {
+          "maximum": 2100,
+          "minimum": 2020,
+          "title": "Year",
+          "type": "integer"
+        },
+        "quarter": {
+          "maximum": 4,
+          "minimum": 1,
+          "title": "Quarter",
+          "type": "integer"
+        },
+        "month": {
+          "maximum": 12,
+          "minimum": 1,
+          "title": "Month",
+          "type": "integer"
+        },
+        "week_of_year": {
+          "maximum": 53,
+          "minimum": 1,
+          "title": "Week Of Year",
+          "type": "integer"
+        },
+        "day_of_week": {
+          "maximum": 6,
+          "minimum": 0,
+          "title": "Day Of Week",
+          "type": "integer"
+        },
+        "hour": {
+          "maximum": 23,
+          "minimum": 0,
+          "title": "Hour",
+          "type": "integer"
+        },
+        "is_weekend": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Is Weekend",
+          "type": "integer"
+        },
+        "is_night": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Is Night",
+          "type": "integer"
+        },
+        "sla_threshold_hours": {
+          "exclusiveMinimum": 0.0,
+          "maximum": 720.0,
+          "title": "Sla Threshold Hours",
+          "type": "number"
+        }
+      },
+      "required": [
+        "year",
+        "quarter",
+        "month",
+        "week_of_year",
+        "day_of_week",
+        "hour",
+        "is_weekend",
+        "is_night",
+        "sla_threshold_hours"
+      ],
+      "title": "IncidentRecord",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "request_id": {
+      "maxLength": 80,
+      "title": "Request Id",
+      "type": "string"
+    },
+    "records": {
+      "items": {
+        "$ref": "#/$defs/IncidentRecord"
+      },
+      "maxItems": 64,
+      "minItems": 1,
+      "title": "Records",
+      "type": "array"
+    },
+    "decision_mode": {
+      "default": "shadow_ranking",
+      "enum": [
+        "shadow_ranking",
+        "alert_candidate",
+        "baseline_only"
+      ],
+      "title": "Decision Mode",
+      "type": "string"
+    },
+    "threshold": {
+      "anyOf": [
+        {
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Threshold"
+    }
+  },
+  "required": [
+    "records"
+  ],
+  "title": "PredictRequest",
+  "type": "object"
+}

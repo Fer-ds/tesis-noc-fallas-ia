@@ -1,0 +1,14 @@
+git checkout seminario-tesis2-validacion-latencia-sprint10
+git pull --ff-only origin seminario-tesis2-validacion-latencia-sprint10
+git checkout -b seminario-tesis2-despliegue-minimo-sprint11
+
+# Copiar el contenido del ZIP sobre la raíz del repositorio.
+
+python -m pip install -r requirements-sprint11.lock.txt
+python src/generate_contract_schemas_sprint11.py
+python -m unittest discover -s tests -p "test_*sprint11.py" -v
+python src/run_e2e_sprint11.py
+
+git add .
+git commit -m "Sprint 11: plan de despliegue, contratos, E2E, tests y rollback"
+git push -u origin seminario-tesis2-despliegue-minimo-sprint11

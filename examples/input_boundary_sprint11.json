@@ -1,0 +1,26 @@
+{
+  "request_id": "req-boundary-sprint11-001",
+  "decision_mode": "shadow_ranking",
+  "records": [
+    {
+      "domain": "DOMINIO_NUEVO",
+      "area": null,
+      "priority": "MINOR",
+      "type_of_incident": "OTRO",
+      "trouble_type": "UNKNOWN",
+      "incident_type": "NEW_CATEGORY",
+      "network_id": "network_unseen",
+      "reason_group": null,
+      "branch_id": "branch_unseen",
+      "year": 2026,
+      "quarter": 4,
+      "month": 12,
+      "week_of_year": 53,
+      "day_of_week": 6,
+      "hour": 23,
+      "is_weekend": 1,
+      "is_night": 1,
+      "sla_threshold_hours": 720.0
+    }
+  ]
+}

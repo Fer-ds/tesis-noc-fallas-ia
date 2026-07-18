@@ -1,0 +1,13 @@
+{
+  "request_id": "req-invalid-sprint11-001",
+  "status": "error",
+  "code": "INPUT_VALIDATION_ERROR",
+  "message": "La entrada no cumple el contrato de inferencia.",
+  "hint": "Revise campos obligatorios, tipos, rangos y el máximo de 64 registros por lote.",
+  "details": [
+    {
+      "field": "records.0.hour",
+      "message": "Input should be less than or equal to 23"
+    }
+  ]
+}
